@@ -1,0 +1,19 @@
+{
+  "name": "wysiwig-templator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/djamro2/wysiwig-templator.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/djamro2/wysiwig-templator/issues"
+  },
+  "homepage": "https://github.com/djamro2/wysiwig-templator#readme"
+}

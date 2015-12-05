@@ -1,0 +1,17 @@
+
+.editor-wrapper {
+  text-align: center;
+}
+
+.editor-wrapper > #editorForm {
+  max-width: 800px;
+  margin: auto;
+}
+
+.submit-article {
+  margin-top: 2rem;
+}
+
+fieldset {
+    border: none;
+}
