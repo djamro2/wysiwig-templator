@@ -15,3 +15,7 @@
 fieldset {
     border: none;
 }
+
+.input-row {
+    margin-bottom: 25px;
+}

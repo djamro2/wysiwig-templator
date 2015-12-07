@@ -1,6 +1,7 @@
 
 var express    = require('express');
 var mongoose   = require('mongoose');
+var handlebars = require('express-handlebars');
 var bodyParser = require('body-parser');
 var app        = express();
 
@@ -8,6 +9,9 @@ var app        = express();
 app.use(bodyParser.urlencoded({
   extended: true
 }));
+
+app.engine('handlebars', handlebars({defaultLayout: 'main' }));
+app.set('view engine', 'handlebars');
 
 app.use(bodyParser.json());
 app.use(express.static('public'));
@@ -39,11 +43,17 @@ var Wysiwig = mongoose.model('Wysiwig', wysiwigSchema);
 //route that takes the submitted article
 app.post('/sendarticle', function (req, res) {
 
-    var wysiwig = new Wysiwig({text: req.body.text});
+    var author = "Dan Jamrozik"; //data which would be read from auth here
+
+    var title = req.body.title.split(' ').join('_'); //replace spaces
+
+    var wysiwig = new Wysiwig({text: req.body.text,
+                               title: title,
+                               author: author});
 
     wysiwig.save(function(error, result){
         if (!error){
-            res.json(result);
+            res.redirect('/article/' + title);
         } else {
             res.send(error);
         }
@@ -51,7 +61,13 @@ app.post('/sendarticle', function (req, res) {
 });
 
 app.get('/article/:title', function(req, res){
-    //return that article in a template
+
+    var title = req.params.title;
+
+    Wysiwig.findOne({title: title}, function(error, result){
+        console.log(result);
+        res.render('article', {title: result.title, author: result.author, text: result.text});
+    })
 });
 
 var server = app.listen(8000, function () {
