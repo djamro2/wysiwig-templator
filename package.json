@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/djamro2/wysiwig-templator/issues"
   },
-  "homepage": "https://github.com/djamro2/wysiwig-templator#readme"
+  "homepage": "https://github.com/djamro2/wysiwig-templator#readme",
+  "devDependencies": {
+    "mongoose": "^4.2.9"
+  }
 }
