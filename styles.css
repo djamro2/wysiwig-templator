@@ -24,3 +24,8 @@ h2 {
     font-family:Helvetica;
     line-height: 10px;
 }
+
+.article-title {
+    margin-top: 5rem;
+}
+
