@@ -16,7 +16,7 @@
 
     <h1>WYSIWIG Editor</h1>
 
-    <form method="post" action="article.php" id="editorForm">
+    <form method="post" action="insert_into_table.php" id="editorForm">
 
         <fieldset>
             <div class="input-row">
